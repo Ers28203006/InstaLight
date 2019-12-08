@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "InstagramLight";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        @foreach (var p in ViewBag.Posts)
+        {
+            <div class="row margin">
+                <figure class="fig margin">
+                    <img src=@p.PhotoPath width="320" height="179">
+                    <figcaption>
+                        <p><a href="/Post/Counter/@p.Id"><i class="fas fa-heart fa-1x"> @p.Like</i></a></p>
+                        @p.Description
+                    </figcaption>
+                </figure>
+            </div>
+        }
+
+            <div class="row margin">
+                <a href="/Post/Create" class="btn btn-primary" role="button">Добавить пост</a>
+            </div>
+    </div>
+</div>
